@@ -29,3 +29,13 @@ $("#searchBtn").on("click",function(){
     }
   });
 });
+
+$("#searchBtn").on("click",function(){
+  getCountry();
+});
+
+$("#capitalInput").on("keypress",function(event){
+  if(event.key==="Enter"){
+    getCountry();
+  }
+});
