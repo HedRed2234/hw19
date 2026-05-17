@@ -1,4 +1,4 @@
-$("#searchBtn").on("click",function(){
+function getCountry(){
   let capital=$("#capitalInput").val();
   $("#result").html("");
   if(capital===""){
@@ -14,7 +14,6 @@ $("#searchBtn").on("click",function(){
     success:function(data){
       let country=data[0];
       let flag=country.flags.png;
-
       let description=country.flags.alt;
       $("#result").html(`
         <img class="flag" src="${flag}" alt="flag">
@@ -28,13 +27,13 @@ $("#searchBtn").on("click",function(){
       );
     }
   });
-});
+}
 
 $("#searchBtn").on("click",function(){
   getCountry();
 });
 
-$("#capitalInput").on("keypress",function(event){
+$("#capitalInput").on("keydown",function(event){
   if(event.key==="Enter"){
     getCountry();
   }
