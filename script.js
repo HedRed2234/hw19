@@ -29,11 +29,9 @@ function getCountry(){
   });
 }
 
-$("#searchBtn").on("click",function(){
-  getCountry();
-});
+$("#searchBtn").on("click", getCountry);
 
-$("#capitalInput").on("keydown",function(event){
+$("#capitalInput").on("keydown", function(event){
   if(event.key==="Enter"){
     getCountry();
   }
